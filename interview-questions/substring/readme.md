@@ -1,4 +1,4 @@
-# Approach
+# Approach Common Substring
 
 # You want to find the most common substring within two strings
 
@@ -35,3 +35,18 @@ B [0  1  0  1]
 A [1  0  2  0]
 B [0  2  0  3]
 A [1  0  3  0]
+
+
+# Approach Longest Substring
+
+# You want to find the most longest substring w/o duplicates
+
+You are given a strings for ex:
+
+a = "abcdabccbbfjkilo"
+
+By looking at the string above we can see that "bfjkilo" at the end of the string has no duplicate values.
+
+# Methods
+
+1. [Reference](https://www.youtube.com/watch?v=wiGpQwVHdE0)

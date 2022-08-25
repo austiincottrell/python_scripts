@@ -2,8 +2,8 @@
 from array import *
 
 class sub:
-  def common_substring(self,list_a: list, list_b: list):
-    a,b,longest_substring = list_a.upper(),list_b.upper(),0
+  def common_substring(self, string_1: str, string_2: str) -> int:
+    a,b,longest_substring = string_1.upper(),string_2.upper(),0
 
     if len(a) == 0 or len(b) == 0:
       return longest_substring
@@ -22,12 +22,27 @@ class sub:
           if arr[i][x] > longest_substring:
             longest_substring = arr[i][x]
     return longest_substring
-  def longest_substring(self,list_a: list):
-    pass
-    
+  def longest_substring(self, string_1: str) -> int:
+    charSet,left,result = set(),0,0
 
-# a = "ABABACCLO"
-# b = "BABABCCFJI"
-# v = sub().common_substring(a,b)
-# print(str(v))
+    for right in range(len(string_1)):
+      while string_1[right] in charSet:
+        charSet.remove(string_1[left])
+        left += 1
+      charSet.add(string_1[right])
+      result = max(result, right - left + 1)
 
+    return result
+
+
+
+a = "ABABACCLO"
+b = "BABABCCFJI"
+v = sub().common_substring(a,b)
+print(str(v))
+## should be 4
+
+a = "abcdabccbbfjkilo"
+v = sub().longest_substring(a)
+print(str(v))
+## should be 7
